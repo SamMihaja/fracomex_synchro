@@ -229,13 +229,13 @@ defmodule FracomexSynchro.SyncLogic do
   def get_image_file(id, image) do
     cond do
       not is_nil(image) ->
-      File.write(Path.expand("priv/static/images/big-items/#{id}.jpg"), image, [:binary])
+      File.write("/home/mgbi/elixir/fracomex/fracomex/priv/static/images/big-items/#{id}.jpg", image, [:binary])
 
-      open(Path.expand("priv/static/images/big-items/#{id}.jpg"))
+      open("/home/mgbi/elixir/fracomex/fracomex/priv/static/images/big-items/#{id}.jpg")
       |> quality(20)
-      |> save(path: Path.expand("priv/static/images/small-items/#{id}.jpg"))
+      |> save(path: "/home/mgbi/elixir/fracomex/fracomex/master/focicom/priv/static/images/small-items/#{id}.jpg")
 
-      open(Path.expand("priv/static/images/big-items/#{id}.jpg"))
+      open("/home/mgbi/elixir/fracomex/fracomex/priv/static/images/big-items/#{id}.jpg")
       |> quality(50)
       |> save()
 
